@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ReactMovie/static/css/main.a2161528.chunk.css",
-    "main.js": "/ReactMovie/static/js/main.b2cccbd7.chunk.js",
-    "main.js.map": "/ReactMovie/static/js/main.b2cccbd7.chunk.js.map",
-    "runtime~main.js": "/ReactMovie/static/js/runtime~main.8ef7d706.js",
-    "runtime~main.js.map": "/ReactMovie/static/js/runtime~main.8ef7d706.js.map",
-    "static/js/2.31ebf22a.chunk.js": "/ReactMovie/static/js/2.31ebf22a.chunk.js",
-    "static/js/2.31ebf22a.chunk.js.map": "/ReactMovie/static/js/2.31ebf22a.chunk.js.map",
-    "index.html": "/ReactMovie/index.html",
-    "precache-manifest.557695c1c0e4fa12b61893963c2893f4.js": "/ReactMovie/precache-manifest.557695c1c0e4fa12b61893963c2893f4.js",
-    "service-worker.js": "/ReactMovie/service-worker.js",
-    "static/css/main.a2161528.chunk.css.map": "/ReactMovie/static/css/main.a2161528.chunk.css.map"
+    "main.css": "/testRoom/ReactMovie/static/css/main.a2161528.chunk.css",
+    "main.js": "/testRoom/ReactMovie/static/js/main.a2a9da80.chunk.js",
+    "main.js.map": "/testRoom/ReactMovie/static/js/main.a2a9da80.chunk.js.map",
+    "runtime~main.js": "/testRoom/ReactMovie/static/js/runtime~main.99a0392b.js",
+    "runtime~main.js.map": "/testRoom/ReactMovie/static/js/runtime~main.99a0392b.js.map",
+    "static/js/2.31ebf22a.chunk.js": "/testRoom/ReactMovie/static/js/2.31ebf22a.chunk.js",
+    "static/js/2.31ebf22a.chunk.js.map": "/testRoom/ReactMovie/static/js/2.31ebf22a.chunk.js.map",
+    "index.html": "/testRoom/ReactMovie/index.html",
+    "precache-manifest.4a1cccd2ae6f5d161c5dcdbec9e41b1e.js": "/testRoom/ReactMovie/precache-manifest.4a1cccd2ae6f5d161c5dcdbec9e41b1e.js",
+    "service-worker.js": "/testRoom/ReactMovie/service-worker.js",
+    "static/css/main.a2161528.chunk.css.map": "/testRoom/ReactMovie/static/css/main.a2161528.chunk.css.map"
   }
 }
