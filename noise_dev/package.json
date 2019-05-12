@@ -12,6 +12,7 @@
     "babel-loader": "8.0.5",
     "babel-plugin-named-asset-import": "^0.3.2",
     "babel-preset-react-app": "^9.0.0",
+    "body-parser": "^1.19.0",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "2.1.1",
@@ -63,7 +64,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "dev": "nodemon server/server.js | node scripts/start.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -130,5 +132,5 @@
       "react-app"
     ]
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "http://0.0.0.0:4000"
 }
