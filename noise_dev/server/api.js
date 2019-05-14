@@ -1,9 +1,18 @@
 var express = require('express');
 var api = express.Router();
 var mysql = require('mysql');
+var http = require('http');
 // var bodyParser = require('body-parser');
 
-
+var httpOpts = {
+  host: 'test.ooolab.xyz',
+  port: 4000,
+  method: 'POST',
+  path: '/api/testG',
+  headers: {
+    'Content-Type': 'text/html'
+  }
+};
 
 var db = mysql.createPool({
   host: 'localhost',
@@ -13,6 +22,36 @@ var db = mysql.createPool({
   database: 'test'
 });
 
+var show_Noise = 1;
+//POST 메소드 요청
+function _postRequest(payload) {
+
+  var resData = '';
+  var req = http.request(httpOpts, function(res){
+  //응답처리
+    res.on('data', function(chunk){
+      resData += chunk;
+    });
+
+
+    res.on('end', function(){
+      console.log(resData);
+    });
+  });
+
+  httpOpts.headers['Content-Type'] = 'application/json';
+  req.data = `{"message":"`+payload+`"}`;
+  httpOpts.headers['Content-Length'] = req.data.length;
+
+  req.on('error', function(err){
+    console.log("오류발생:"+ err.message);
+  })
+
+
+//요청전송
+  req.write(req.data);
+  req.end();
+}
 api.use('/',function timelog(req,res,next) {
   // console.log('Time : '+Date.now());
   next();
@@ -24,9 +63,9 @@ api.use(express.json());
 //   res.send('api first route.');
 // })
 
-api.get("/getUsername", function(req, res){
-  console.log(req.get('user-agent'));
-  res.send({ username: req.get('user-agent') });
+api.get("/getNoise", function(req, res){
+  // console.log(req.get('user-agent'));
+  res.send({ username: show_Noise });
 });
 
 //현재시각 또는 특정시간대 알아내는 api
@@ -78,7 +117,24 @@ api.get("/noiseData/:hid",function(req,res) {
   }
 })
 
-
+api.post('/test',function(req,res) {
+  console.log(req.body);
+  show_Noise = Math.floor(Math.random() * 70);
+  res.send(200);
+})
+api.get('/testG',function(req,res) {
+  _postRequest("Hello World!");
+  show_Noise = Math.floor(Math.random() * 70)+1;
+  setTimeout(() => {
+    show_Noise=0;
+  },500)
+  res.send("test pages");
+})
+api.post('/testG',function(req,res) {
+  console.log(req.body);
+  console.log(show_Noise);
+  res.send(200);
+})
 //데이터 받기
 api.post("/noiseData",function(req,res) {
   if(req.body.level) {

@@ -1,33 +1,18 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Home, ShowNoise } from './pages';
 
 class App extends Component {
-
-    state = { username: null };
-    
-    componentDidMount() {
-        fetch('/api/getUsername')
-            .then(res => res.json())
-            .then(user => this.setState({ username: user.username }));
-    }
-
   render() {
-    const { username } = this.state;
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-          <div>
-              {username ? <h1>{`Hello ${username}`}</h1> : <h1>Loading.. please wait!</h1>}
-          </div>
-      </div>
-    );
+    return(
+    <Router>
+    <Route exact path='/' component={Home}/>
+    <Route path='/show' component={ShowNoise}/>
+    </Router>
+    )
   }
 }
 

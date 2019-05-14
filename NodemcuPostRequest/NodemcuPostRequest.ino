@@ -25,7 +25,7 @@ void loop() {
     Serial.println("Message is sent");
    else
     Serial.println("Error Occured");
-   delay(1000);
+   delay(30);
 }
 
 int Sendrequest(int hid, int level) {
